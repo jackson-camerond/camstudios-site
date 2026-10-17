@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CAM Studios LA · Mobile Photography Studio</title>
+<meta name="description" content="CAM Studios LA is a mobile photography studio in Los Angeles. Backdrop, lights and a live preview screen, set up at your home, office, event or campus. Family, holiday, headshots, events, portraits and grads.">
+<meta property="og:title" content="CAM Studios LA · Mobile Photography Studio">
+<meta property="og:image" content="https://camstudios.la/img/aisle.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 fill=%22%23191610%22/><text x=%2232%22 y=%2242%22 font-family=%22Georgia%22 font-size=%2221%22 fill=%22%23bfa266%22 text-anchor=%22middle%22>CAM</text></svg>">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --paper:#f7f5f0; --canvas:#fdfcf9; --ink:#191610; --soft:#6a6358; --faint:#9a9284;
+    --line:#e4ded2; --hair:#d6cfc0; --gold:#9c7b3a; --gold2:#bfa266;
+    --serif:"Cormorant Garamond",Georgia,serif; --sans:"Hanken Grotesk",system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:inherit}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+
+  .bar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .bar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .mark{font-family:var(--serif);font-size:21px;letter-spacing:.32em;text-transform:uppercase}
+  .mark small{font-family:var(--sans);font-size:10px;letter-spacing:.24em;color:var(--gold);margin-left:10px}
+  .nav{display:flex;gap:28px;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+  .nav a{text-decoration:none;color:var(--soft)} .nav a:hover{color:var(--ink)}
+  .cta{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:12px 22px;background:var(--ink);color:var(--paper);text-decoration:none;border:1px solid var(--ink)}
+  .cta.line{background:transparent;color:var(--ink);border-color:var(--hair)}
+
+  .hero{background:var(--canvas);border-bottom:1px solid var(--line)}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center;padding-top:clamp(48px,8vw,104px);padding-bottom:clamp(48px,8vw,104px)}
+  .kick{font-size:11px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:14px}
+  .kick::before{content:"";width:36px;height:1px;background:var(--gold)}
+  h1{font-family:var(--serif);font-weight:300;font-size:clamp(46px,7.5vw,92px);line-height:.95;letter-spacing:-.01em;margin:22px 0 20px}
+  h1 em{color:var(--gold);font-weight:400}
+  .lede{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.3vw,24px);color:var(--soft);max-width:30ch;margin:0 0 30px}
+  .acts{display:flex;gap:12px;flex-wrap:wrap}
+  .frame{position:relative;background:#d9d4ca;border:1px solid var(--line);overflow:hidden}
+  .frame .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(25,22,16,.38)}
+  .hero .frame{aspect-ratio:4/5}
+
+  section{padding:clamp(56px,9vw,112px) 0;border-bottom:1px solid var(--line)}
+  .chap{display:flex;align-items:baseline;gap:16px;margin-bottom:clamp(28px,5vw,48px)}
+  .chap .n{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:19px}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(32px,5vw,50px);margin:0;line-height:1}
+
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,3vw,32px)}
+  .step{border-top:1px solid var(--hair);padding-top:18px}
+  .step .t{font-family:var(--serif);font-size:24px;margin:6px 0 8px}
+  .step p{margin:0;color:var(--soft);font-size:14.5px}
+  .step .k{font-size:10px;font-weight:700;letter-spacing:.2em;color:var(--gold)}
+
+  .who{display:grid;grid-template-columns:repeat(3,1fr);row-gap:36px;gap:clamp(14px,2.4vw,26px)}
+  .svc{border-top:1px solid var(--hair);padding-top:6px}
+  .who .cap{padding:14px 2px 0}
+  .who .cap .t{font-family:var(--serif);font-size:24px}
+  .who .cap p{margin:4px 0 0;color:var(--soft);font-size:14px}
+
+  .pk{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
+  .card{background:var(--canvas);border:1px solid var(--line);padding:28px 26px}
+  .card .t{font-family:var(--serif);font-size:28px;margin:0 0 4px}
+  .card .s{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  .card ul{margin:0;padding-left:18px;color:var(--soft);font-size:14.5px} .card li{margin:6px 0}
+  .card .p{font-family:var(--serif);font-style:italic;font-size:19px;margin-top:18px;color:var(--ink)}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .grid .frame{aspect-ratio:4/5}
+
+  .faq{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(24px,5vw,64px)}
+  details{border-top:1px solid var(--line);padding:18px 2px}
+  summary{cursor:pointer;font-family:var(--serif);font-size:21px;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  details p{margin:10px 0 0;color:var(--soft);font-size:15px}
+
+  .book{text-align:center;background:var(--canvas)}
+  .book p{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--soft);max-width:44ch;margin:16px auto 28px}
+  footer{padding:36px 0;font-size:11px;letter-spacing:.08em;color:var(--faint)}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  @media(max-width:900px){
+    #holiday .wrap{grid-template-columns:1fr !important}
+    .hero .wrap{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.who,.pk{grid-template-columns:1fr}
+    .grid{grid-template-columns:1fr}.faq{grid-template-columns:1fr}.nav{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="bar"><div class="wrap">
+  <div class="mark">CAM Studios <small>LA</small></div>
+  <nav class="nav"><a href="#holiday">Holiday</a><a href="#services">Services</a><a href="#how">How it works</a><a href="#faq">FAQ</a></nav>
+  <a class="cta" href="#book">Book a date</a>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <div>
+    <div class="kick">Mobile photography studio · Los Angeles</div>
+    <h1>The studio<br>comes <em>to you</em>.</h1>
+    <p class="lede">A full studio, set up wherever you are: your living room, your office, your event or your campus. You see every shot on a live screen as it happens.</p>
+    <div class="acts"><a class="cta" href="#book">Book a date</a><a class="cta line" href="https://cam-controllingallmusic.zohobookings.com/5012218000000037004" target="_blank" rel="noopener">Book a call</a></div>
+  </div>
+  <div class="frame"><img src="img/aisle.jpg" alt="Wedding ceremony aisle with rose petals, photographed by CAM Studios LA" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+</div></div>
+
+<section id="holiday" style="background:var(--ink);color:var(--paper);border-bottom:0"><div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px);align-items:center">
+  <div>
+    <div class="kick">Now booking · Thanksgiving through Christmas</div>
+    <h2 style="margin-top:18px;font-size:clamp(38px,6vw,64px);font-weight:300">Holiday sessions<br><em style="color:var(--gold2)">at home</em>.</h2>
+    <p style="font-family:var(--serif);font-style:italic;font-size:20px;color:#cfc6b6;max-width:36ch">The whole family is finally in one place. We bring the studio to your house, set up in about 20 minutes, and get everyone, grandparents included, before dinner.</p>
+    <ul style="color:#cfc6b6;font-size:15px;padding-left:18px;line-height:1.8"><li>Family portraits on a studio backdrop or by the tree</li><li>Fast sessions built around the holiday schedule</li><li>Private gallery in time for holiday cards and gifts</li><li>Prints and albums available from your gallery</li></ul>
+    <div class="acts" style="margin-top:22px"><a class="cta" style="background:var(--gold);border-color:var(--gold)" href="https://forms.zohopublic.com/controllingallmusic/form/PhotographyVideographybookingrequest/formperma/z3QuTZlOPqoK-NsoMR0LTdUIs5mH7njMKCsTLuzAsJQ" target="_blank" rel="noopener">Reserve a holiday date</a></div>
+  </div>
+  <div style="border:1px solid #4a4034;padding:clamp(26px,4vw,44px)">
+    <div style="font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold2)">The holiday window</div>
+    <div style="font-family:var(--serif);font-size:clamp(34px,5vw,54px);font-weight:300;line-height:1.05;margin:14px 0 22px">Thanksgiving<br>through<br>Christmas</div>
+    <div style="display:grid;gap:14px;font-size:15px;color:#cfc6b6">
+      <div style="border-top:1px solid #4a4034;padding-top:12px">At your home, or anywhere the family gathers</div>
+      <div style="border-top:1px solid #4a4034;padding-top:12px">About 20 minutes to set up, then we shoot</div>
+      <div style="border-top:1px solid #4a4034;padding-top:12px">Photos back in time for cards and gifts</div>
+    </div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <div class="chap"><span class="n">I</span><h2>How it works</h2></div>
+  <div class="steps">
+    <div class="step"><div class="k">01</div><div class="t">We set up</div><p>A full studio in about 20 to 30 minutes: backdrop, lighting and a live preview screen. A living room, conference room or classroom all work.</p></div>
+    <div class="step"><div class="k">02</div><div class="t">You step in</div><p>Easy direction on posing, and you see every frame on the screen as it's taken. No guessing how it turned out.</p></div>
+    <div class="step"><div class="k">03</div><div class="t">You pick</div><p>Choose your favorite right there, so there's no back and forth by email later.</p></div>
+    <div class="step"><div class="k">04</div><div class="t">We deliver</div><p>Edited photos in a private online gallery, ready to download, share and print.</p></div>
+  </div>
+</div></section>
+
+<section id="services"><div class="wrap">
+  <div class="chap"><span class="n">II</span><h2>What we shoot</h2></div>
+  <div class="who">
+    <div class="svc"><div class="cap"><div class="t">Family &amp; holiday</div><p>At home, with the people who matter. Holiday sessions run Thanksgiving through Christmas.</p></div></div>
+    <div class="svc"><div class="cap"><div class="t">Headshots &amp; teams</div><p>A studio in your office or at your event. One person or the whole company in an afternoon.</p></div></div>
+    <div class="svc"><div class="cap"><div class="t">Events &amp; mixers</div><p>Celebrations, showers, networking nights and conferences, plus headshot booths for guests.</p></div></div>
+    <div class="svc"><div class="cap"><div class="t">Portraits &amp; grads</div><p>Graduations, proms, birthdays and personal branding.</p></div></div>
+    <div class="svc"><div class="cap"><div class="t">Maternity &amp; milestones</div><p>Pregnancy announcements, maternity sessions and the moments after.</p></div></div>
+    <div class="svc"><div class="cap"><div class="t">Schools &amp; programs</div><p>Students, staff and professional development days, built around your schedule.</p></div></div>
+  </div>
+</div></section>
+
+<section id="packages"><div class="wrap">
+  <div class="chap"><span class="n">III</span><h2>Ways to book</h2></div>
+  <div class="pk">
+    <div class="card"><div class="t">Mini Session</div><div class="s">Quick and focused</div><ul><li>A short session at your location</li><li>Studio backdrop and lighting</li><li>Live preview as we shoot</li><li>Private gallery of edited photos</li></ul><div class="p">Pricing on request</div></div>
+    <div class="card"><div class="t">Full Session</div><div class="s">Families, portraits, branding</div><ul><li>More time, more looks, more people</li><li>Backdrop plus natural setups at your place</li><li>Full edited gallery</li><li>Prints and albums available</li></ul><div class="p">Pricing on request</div></div>
+    <div class="card"><div class="t">Event &amp; Team</div><div class="s">Companies, schools, events</div><ul><li>Coverage by the hour or a headshot booth</li><li>Consistent look for everyone</li><li>Delivery page for guests or staff</li><li>DJ and live streaming available through C.A.M.</li></ul><div class="p">Pricing on request</div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="chap"><span class="n">IV</span><h2>Recent work</h2></div>
+  <div class="grid">
+    <div class="frame"><img src="img/details.jpg" alt="Groom's details: watch, cufflinks and bow tie" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+    <div class="frame"><img src="img/veil.jpg" alt="Couple sharing a kiss under the veil" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+    <div class="frame"><img src="img/aisle.jpg" alt="Outdoor ceremony aisle" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 70%"></div>
+  </div>
+  <p style="margin-top:22px"><a class="cta line" href="https://gallery.creatingartfulmoments.com/portfolio" target="_blank" rel="noopener">See the full portfolio</a></div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <div class="chap"><span class="n">V</span><h2>Questions</h2></div>
+  <div class="faq">
+    <div>
+      <details><summary>How much space do you need?</summary><p>About 10 by 12 feet and one outlet. A conference room, lobby corner or classroom is plenty.</p></details>
+      <details><summary>Do you come to our house?</summary><p>Yes. Most family and holiday sessions happen at home. We bring the backdrop, lights and screen and pack it all up when we're done.</p></details>
+      <details><summary>When do we get the photos?</summary><p>You see the shots live, then the edited photos arrive in a private online gallery. Holiday sessions are delivered in time for cards and gifts.</p></details>
+    </div>
+    <div>
+      <details><summary>Do you travel?</summary><p>We're based in Los Angeles and come to you across LA and the surrounding areas.</p></details>
+      <details><summary>How many people can you photograph?</summary><p>From one person to a full family reunion or a whole office. Tell us your headcount and we'll plan the time.</p></details>
+      <details><summary>Do you do anything besides photos?</summary><p>We also do DJ, sound, lighting and live streaming through our sister company, Controlling All Music.</p></details>
+    </div>
+  </div>
+</div></section>
+
+<section class="book" id="book"><div class="wrap">
+  <div class="kick" style="justify-content:center">Book a date</div>
+  <h2 style="margin-top:16px">Bring the studio to you.</h2>
+  <p>Know what you want? Pick your date and tell us about it. Rather talk it through first? Grab a quick call. Holiday dates go fast.</p>
+  <div class="acts" style="justify-content:center">
+    <a class="cta" href="https://forms.zohopublic.com/controllingallmusic/form/PhotographyVideographybookingrequest/formperma/z3QuTZlOPqoK-NsoMR0LTdUIs5mH7njMKCsTLuzAsJQ" target="_blank" rel="noopener">Book a date</a>
+    <a class="cta line" href="https://cam-controllingallmusic.zohobookings.com/5012218000000037004" target="_blank" rel="noopener">Book a 15 minute call</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>CAM Studios LA · Creating Artful Moments · Los Angeles</span>
+  <span><a href="https://instagram.com/camstudios.la">@camstudios.la</a> · <a href="https://gallery.creatingartfulmoments.com/portfolio">Portfolio</a></span>
+</div></footer>
+
+</body>
+</html>
