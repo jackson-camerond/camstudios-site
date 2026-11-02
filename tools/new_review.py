@@ -33,8 +33,9 @@ def personal_page(code, info):
     """site/review/<code>/index.html: the review page plus link-preview tags with their own photo."""
     page = open(os.path.join(SITE, "index.html")).read()
     who, img = html.escape(info["first"]), f"https://camstudios.la/review/p/{code}/1.jpg"
+    title = html.escape(info.get("og_title") or f'{info["first"]}, found these from your shoot')
     tags = (f'<meta name="review-code" content="{code}">\n'
-            f'<meta property="og:title" content="{who}, found these from your shoot">\n'
+            f'<meta property="og:title" content="{title}">\n'
             f'<meta property="og:description" content="A couple of my favorites and a holiday gift inside. CAM Studios LA">\n'
             f'<meta property="og:image" content="{img}">\n<meta property="og:type" content="website">\n'
             f'<meta property="og:url" content="https://camstudios.la/review/{code}/">\n'
