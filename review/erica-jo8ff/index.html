@@ -28,8 +28,7 @@ h1{font:400 clamp(34px,7vw,46px)/1.08 var(--serif);margin:34px 0 10px;text-wrap:
 h1 em{font-style:italic;color:var(--gold)}
 .lede{color:var(--soft);margin:0 0 24px}
 .photos{display:flex;gap:10px;margin:0 0 28px}
-.photos img{flex:1 1 0;min-width:0;width:100%;height:280px;object-fit:cover;border-radius:3px;background:var(--line)}
-@media (max-width:480px){.photos img{height:190px}}
+.photos img{flex:1 1 0;min-width:0;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:3px;background:var(--line)}
 form{display:grid;gap:22px}
 label.q{font:600 12px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--soft);display:block;margin-bottom:8px}
 textarea{width:100%;min-height:170px;font:17px/1.55 var(--sans);color:var(--ink);background:var(--canvas);border:1px solid var(--line);border-radius:4px;padding:14px 16px;resize:vertical}
@@ -108,7 +107,7 @@ function fill(info){
   document.querySelectorAll("[data-first]").forEach(e => e.textContent = info.first);
   document.querySelectorAll("[data-shoot]").forEach(e => e.textContent = info.shoot);
   document.querySelectorAll("[data-code]").forEach(e => e.textContent = info.discount);
-  (info.photos || []).forEach(src => { const i = new Image(); i.src = "/review/p/" + code + "/" + src; i.alt = info.first + ", " + info.shoot; $("photos").appendChild(i); });
+  (info.photos || []).forEach(src => { const i = new Image(); i.src = "/review/p/" + code + "/e" + src; i.alt = info.first + ", " + info.shoot; $("photos").appendChild(i); });
   for (let n = 1; n <= 5; n++){
     const b = document.createElement("button"); b.type = "button"; b.textContent = "★"; b.setAttribute("role","radio"); b.setAttribute("aria-label", n + " star" + (n > 1 ? "s" : ""));
     b.onclick = () => { stars = stars === n ? 0 : n; [...$("stars").children].forEach((x, i) => { x.classList.toggle("on", i < stars); x.setAttribute("aria-checked", String(i + 1 === stars)); }); };
