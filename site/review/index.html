@@ -37,6 +37,8 @@ textarea:focus,button:focus-visible,.stars button:focus-visible,input:focus-visi
 .send[disabled]{opacity:.5;cursor:default}
 .err{color:#9b2c2c;font-size:14px;min-height:1em}
 .thanks{display:grid;gap:14px}
+.gift{display:grid;gap:10px;margin:0 0 30px;padding:20px;background:var(--canvas);border:1px solid var(--line);border-radius:4px}
+.gift p{margin:0}
 .code{font:600 22px var(--sans);letter-spacing:.12em;background:var(--canvas);border:1px dashed var(--gold);padding:14px 18px;border-radius:4px;justify-self:start}
 .small{font-size:14px;color:var(--faint)}
 footer{margin-top:44px;font-size:13px;color:var(--faint)}
@@ -58,6 +60,12 @@ footer a{color:var(--soft)}
     <h1>Hi <span data-first></span>, <em>thank you</em>.</h1>
     <p class="lede">A few words about your <span data-shoot></span> helps other people find me more than you'd think.</p>
     <div class="photos" id="photos"></div>
+    <div class="gift">
+      <span class="q" style="display:block;margin-bottom:8px">Your holiday gift</span>
+      <p>20% off one photo shoot or event. Use it yourself or pass it to a friend who's been wanting photos. It works once: book and put down a deposit by December 31, 2026, and the date can be any time after.</p>
+      <div class="code" data-code></div>
+      <p class="small">Yours either way, review or not.</p>
+    </div>
     <form id="f" novalidate>
       <div>
         <label class="q" for="text">What was it like working with me?</label>
@@ -75,7 +83,7 @@ footer a{color:var(--soft)}
 
   <section id="done" class="thanks" hidden>
     <h1>Thank you, <em data-first></em>.</h1>
-    <p class="lede">That means a lot. Your holiday code is still good: 20% off one shoot or event, for you or a friend you pass it to. Book and put down a deposit by December 31, 2026. The date itself can be later.</p>
+    <p class="lede">That means a lot. Your holiday code is below if you need it again: 20% off one shoot or event, for you or a friend. Book and put down a deposit by December 31, 2026.</p>
     <div class="code" id="code"></div>
     <p class="small">Mention the code when you book. Cam will see your note today.</p>
   </section>
@@ -92,6 +100,7 @@ let stars = 0;
 function fill(info){
   document.querySelectorAll("[data-first]").forEach(e => e.textContent = info.first);
   document.querySelectorAll("[data-shoot]").forEach(e => e.textContent = info.shoot);
+  document.querySelectorAll("[data-code]").forEach(e => e.textContent = info.discount);
   (info.photos || []).forEach(src => { const i = new Image(); i.src = "p/" + code + "/" + src; i.alt = info.first + ", " + info.shoot; $("photos").appendChild(i); });
   for (let n = 1; n <= 5; n++){
     const b = document.createElement("button"); b.type = "button"; b.textContent = "★"; b.setAttribute("role","radio"); b.setAttribute("aria-label", n + " star" + (n > 1 ? "s" : ""));
