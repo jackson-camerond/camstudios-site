@@ -3,7 +3,8 @@
 
 Usage: new_review.py <first name> "<shoot>" "<date>" <photo> [<photo>]
 Prints the link, camstudios.la/review/?c=<code>. The code is the first name plus 5 random
-characters so links can't be guessed. The holiday code is FIRSTNAME20: 20% off, used once by them or one friend, book by 12/31/26.
+characters so links can't be guessed. The holiday code is FIRSTNAME20: 20% off, used once by them or one friend,
+booked with a deposit by 12/31/26 (the shoot or event can be later).
 Needs Pillow for resizing (photos go up at 900px on the long side).
 """
 import json, os, re, secrets, string, sys
