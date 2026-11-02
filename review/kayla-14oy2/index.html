@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="review-code" content="kayla-14oy2">
+<meta property="og:title" content="Kayla, found these from your shoot">
+<meta property="og:description" content="A couple of my favorites and a holiday gift inside. CAM Studios LA">
+<meta property="og:image" content="https://camstudios.la/review/p/kayla-14oy2/1.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://camstudios.la/review/kayla-14oy2/">
+<meta name="twitter:card" content="summary_large_image">
+<title>Share your experience · CAM Studios LA</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 fill=%22%23191610%22/><text x=%2232%22 y=%2242%22 font-family=%22Georgia%22 font-size=%2221%22 fill=%22%23bfa266%22 text-anchor=%22middle%22>CAM</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<style>
+:root{--paper:#f7f5f0;--canvas:#fdfcf9;--ink:#191610;--soft:#6a6358;--faint:#9a9284;--line:#e4ded2;--gold:#9c7b3a;
+  --serif:"Cormorant Garamond",Georgia,serif;--sans:"Hanken Grotesk",system-ui,-apple-system,sans-serif}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:620px;margin:0 auto;padding:28px max(20px,env(safe-area-inset-left)) 64px max(20px,env(safe-area-inset-right))}
+.mark{font:500 22px/1 var(--serif);letter-spacing:.02em}
+.mark small{font:600 10px var(--sans);letter-spacing:.2em;color:var(--gold);margin-left:4px}
+h1{font:400 clamp(34px,7vw,46px)/1.08 var(--serif);margin:34px 0 10px;text-wrap:balance}
+h1 em{font-style:italic;color:var(--gold)}
+.lede{color:var(--soft);margin:0 0 24px}
+.photos{display:flex;gap:10px;margin:0 0 28px}
+.photos img{flex:1 1 0;min-width:0;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:3px;background:var(--line)}
+form{display:grid;gap:22px}
+label.q{font:600 12px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--soft);display:block;margin-bottom:8px}
+textarea{width:100%;min-height:170px;font:17px/1.55 var(--sans);color:var(--ink);background:var(--canvas);border:1px solid var(--line);border-radius:4px;padding:14px 16px;resize:vertical}
+textarea:focus,button:focus-visible,.stars button:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.stars{display:flex;gap:4px}
+.stars button{border:0;background:none;font-size:32px;line-height:1;color:var(--line);cursor:pointer;padding:2px}
+.stars button.on{color:var(--gold)}
+.opt{font-size:13px;color:var(--faint);margin-left:6px;text-transform:none;letter-spacing:0;font-weight:400}
+.share{display:flex;gap:10px;align-items:flex-start;color:var(--soft);font-size:15px}
+.share input{width:20px;height:20px;margin-top:2px;accent-color:var(--ink)}
+.send{justify-self:start;background:var(--ink);color:var(--canvas);border:0;border-radius:3px;font:600 15px var(--sans);letter-spacing:.04em;padding:15px 28px;cursor:pointer}
+.send[disabled]{opacity:.5;cursor:default}
+.err{color:#9b2c2c;font-size:14px;min-height:1em}
+.thanks{display:grid;gap:14px}
+.gift{display:grid;gap:10px;margin:0 0 30px;padding:20px;background:var(--canvas);border:1px solid var(--line);border-radius:4px}
+.gift p{margin:0}
+.code{font:600 22px var(--sans);letter-spacing:.12em;background:var(--canvas);border:1px dashed var(--gold);padding:14px 18px;border-radius:4px;justify-self:start}
+.small{font-size:14px;color:var(--faint)}
+footer{margin-top:44px;font-size:13px;color:var(--faint)}
+footer a{color:var(--soft)}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="mark">CAM Studios <small>LA</small></div>
+
+  <section id="loading"><h1>One moment…</h1></section>
+
+  <section id="missing" hidden>
+    <h1>This link has <em>expired</em>.</h1>
+    <p class="lede">Text or email Cam and he'll send you a fresh one: <a href="mailto:contact@camstudios.la">contact@camstudios.la</a>.</p>
+  </section>
+
+  <section id="ask" hidden>
+    <h1>Hi <span data-first></span>, <em>thank you</em>.</h1>
+    <p class="lede">A few words about your <span data-shoot></span> helps other people find me more than you'd think.</p>
+    <div class="photos" id="photos"></div>
+    <div class="gift">
+      <span class="q" style="display:block;margin-bottom:8px">Your holiday gift</span>
+      <p>20% off one photo shoot or event. Use it yourself or pass it to a friend who's been wanting photos. It works once: book and put down a deposit by December 31, 2026, and the date can be any time after.</p>
+      <div class="code" data-code></div>
+      <p class="small">Yours either way, review or not.</p>
+    </div>
+    <form id="f" novalidate>
+      <div>
+        <label class="q" for="text">What was it like working with me?</label>
+        <textarea id="text" name="text" maxlength="4000" placeholder="A sentence or two is perfect." required></textarea>
+      </div>
+      <div>
+        <span class="q" style="display:block;margin-bottom:4px">Rating <span class="opt">optional</span></span>
+        <div class="stars" id="stars" role="radiogroup" aria-label="Rating out of 5"></div>
+      </div>
+      <label class="share"><input type="checkbox" id="share" checked> <span>OK to share this on CAM Studios' site and socials, with my first name only.</span></label>
+      <div class="err" id="err" role="alert"></div>
+      <button class="send" id="send" type="submit">Send</button>
+    </form>
+  </section>
+
+  <section id="done" class="thanks" hidden>
+    <h1>Thank you, <em data-first></em>.</h1>
+    <p class="lede">That means a lot. Your holiday code is below if you need it again: 20% off one shoot or event, for you or a friend. Book and put down a deposit by December 31, 2026.</p>
+    <div class="code" id="code"></div>
+    <p class="small">Mention the code when you book. Cam will see your note today.</p>
+  </section>
+
+  <footer>CAM Studios LA · <a href="https://camstudios.la">camstudios.la</a></footer>
+</main>
+<script>
+const API = "https://2tmnfz7josfaewg6gqho4babem0fogym.lambda-url.us-west-2.on.aws/review";
+const code = ((document.querySelector('meta[name="review-code"]') || {}).content || new URLSearchParams(location.search).get("c") || "").toLowerCase();
+const $ = id => document.getElementById(id);
+const show = id => ["loading","missing","ask","done"].forEach(s => $(s).hidden = s !== id);
+let stars = 0;
+
+function fill(info){
+  document.querySelectorAll("[data-first]").forEach(e => e.textContent = info.first);
+  document.querySelectorAll("[data-shoot]").forEach(e => e.textContent = info.shoot);
+  document.querySelectorAll("[data-code]").forEach(e => e.textContent = info.discount);
+  (info.photos || []).forEach(src => { const i = new Image(); i.src = "/review/p/" + code + "/e" + src; i.alt = info.first + ", " + info.shoot; $("photos").appendChild(i); });
+  for (let n = 1; n <= 5; n++){
+    const b = document.createElement("button"); b.type = "button"; b.textContent = "★"; b.setAttribute("role","radio"); b.setAttribute("aria-label", n + " star" + (n > 1 ? "s" : ""));
+    b.onclick = () => { stars = stars === n ? 0 : n; [...$("stars").children].forEach((x, i) => { x.classList.toggle("on", i < stars); x.setAttribute("aria-checked", String(i + 1 === stars)); }); };
+    $("stars").appendChild(b);
+  }
+}
+
+$("f").addEventListener("submit", async e => {
+  e.preventDefault();
+  const text = $("text").value.trim();
+  if (text.length < 2){ $("err").textContent = "Add a sentence or two first."; $("text").focus(); return; }
+  $("err").textContent = ""; $("send").disabled = true; $("send").textContent = "Sending…";
+  try {
+    const r = await fetch(API, {method: "POST", headers: {"content-type": "application/json"},
+      body: JSON.stringify({code, text, stars, share: $("share").checked})});
+    const out = await r.json();
+    if (!r.ok || !out.ok) throw new Error(out.error || r.status);
+    $("code").textContent = out.discount; show("done"); window.scrollTo(0, 0);
+  } catch (err) {
+    $("err").textContent = "That didn't go through. Check your connection and tap Send again.";
+    $("send").disabled = false; $("send").textContent = "Send";
+  }
+});
+
+(async () => {
+  if (!/^[a-z0-9-]{4,60}$/.test(code)) return show("missing");
+  try {
+    const r = await fetch("/review/data/" + code + ".json", {cache: "no-store"});
+    if (!r.ok) throw 0;
+    fill(await r.json()); show("ask");
+  } catch { show("missing"); }
+})();
+</script>
+</body>
+</html>
