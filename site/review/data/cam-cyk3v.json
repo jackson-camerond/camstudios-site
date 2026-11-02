@@ -1,0 +1,10 @@
+{
+ "first": "Cam",
+ "shoot": "test shoot",
+ "date": "Nov 2026",
+ "photos": [
+  "1.jpg",
+  "2.jpg"
+ ],
+ "discount": "CAM10"
+}
