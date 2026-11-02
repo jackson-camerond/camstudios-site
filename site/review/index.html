@@ -92,7 +92,7 @@ footer a{color:var(--soft)}
 </main>
 <script>
 const API = "https://2tmnfz7josfaewg6gqho4babem0fogym.lambda-url.us-west-2.on.aws/review";
-const code = (new URLSearchParams(location.search).get("c") || "").toLowerCase();
+const code = ((document.querySelector('meta[name="review-code"]') || {}).content || new URLSearchParams(location.search).get("c") || "").toLowerCase();
 const $ = id => document.getElementById(id);
 const show = id => ["loading","missing","ask","done"].forEach(s => $(s).hidden = s !== id);
 let stars = 0;
@@ -101,7 +101,7 @@ function fill(info){
   document.querySelectorAll("[data-first]").forEach(e => e.textContent = info.first);
   document.querySelectorAll("[data-shoot]").forEach(e => e.textContent = info.shoot);
   document.querySelectorAll("[data-code]").forEach(e => e.textContent = info.discount);
-  (info.photos || []).forEach(src => { const i = new Image(); i.src = "p/" + code + "/" + src; i.alt = info.first + ", " + info.shoot; $("photos").appendChild(i); });
+  (info.photos || []).forEach(src => { const i = new Image(); i.src = "/review/p/" + code + "/" + src; i.alt = info.first + ", " + info.shoot; $("photos").appendChild(i); });
   for (let n = 1; n <= 5; n++){
     const b = document.createElement("button"); b.type = "button"; b.textContent = "★"; b.setAttribute("role","radio"); b.setAttribute("aria-label", n + " star" + (n > 1 ? "s" : ""));
     b.onclick = () => { stars = stars === n ? 0 : n; [...$("stars").children].forEach((x, i) => { x.classList.toggle("on", i < stars); x.setAttribute("aria-checked", String(i + 1 === stars)); }); };
@@ -129,7 +129,7 @@ $("f").addEventListener("submit", async e => {
 (async () => {
   if (!/^[a-z0-9-]{4,60}$/.test(code)) return show("missing");
   try {
-    const r = await fetch("data/" + code + ".json", {cache: "no-store"});
+    const r = await fetch("/review/data/" + code + ".json", {cache: "no-store"});
     if (!r.ok) throw 0;
     fill(await r.json()); show("ask");
   } catch { show("missing"); }
